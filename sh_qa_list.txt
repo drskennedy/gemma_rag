@@ -1,0 +1,20 @@
+Q: What is the purpose of SteelHead path selection?
+A: Path selection is a RiOS technology commonly known as intelligent dynamic WAN selection. You can use path selection to define a specific WAN gateway for certain traffic flows, overriding the original destined WAN gateway. This granular path manipulation enables you to better use and more accurately control traffic flow across multiple WAN circuits.
+Q: Does enhanced autodiscovery in SteelHead work for IPv6 networks? If so, when was this support introduced?
+A: Yes, it does. RiOS 9.5 introduced support for enhanced autodiscovery for IPv6 single-stack networks.
+Q: What is the purpose of a peering rule on SteelHead?
+A: The peering rule defines what to do when a SteelHead receives an autodiscovery probe from an unknown SteelHead. When an unknown SteelHead appears connected to your network, you can create a peering rule to prevent it from peering.
+Q: Which RiOS version included full transparency support for IPv6 optimized traffic on SteelHead?
+A: Starting with RiOS 9.7, full transparency mode is supported for IPv6.
+Q: What is the purpose of the "steelhead communication multi-interface enable" command?
+A: It allows all SteelHead neighbor in-path interface IP addresses to be visible to each peer. This visibility ensures neighbor communication even if an interface fails.
+Q: What is the impact of using full address transparency for SteelHead optimized connections?
+A: Full address transparency preserves your client and server IP addresses and port numbers in the TCP/IP header fields for optimized traffic in both directions across the WAN. VLAN tags can also be preserved.
+Q: Name two methods supported by WCCP for transmitting packets between a router and SteelHead.
+A: The GRE encapsulation method and the Layer-2 method.
+Q: What are SteelHead cli commands to use to avoid using the GRE encapsulation method for the traffic return path from the SteelHead when it is layer-2 separated with the WCCP router?
+A: The commands are wccp override-return route-no-gre and wccp override-return sticky-no-gre.
+Q: What is a major issue with policy-based routing virtual in-path SteelHead deployment?
+A: A major issue with PBR is that the PBR router can cause a traffic black hole; that is, it drops all packets to a destination if the SteelHead it is redirecting to fails.
+Q: What option is available on SteelHead to optimize UDP traffic?
+A: The packet mode optimization feature was introduced to optimize UDP traffic.
