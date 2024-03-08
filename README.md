@@ -7,9 +7,6 @@ Retrieval-Augmented Generation (RAG) is a popular technique used to improve the 
 In this project, we will utilize Gemma 2B, a model introduced recently by Google, especially for consumer grade machines. We will test this LLM in a RAG setup for question-answering against a document that the model has not seen during its training. Its performance will be measured in terms of response accuracy, response time, memory and CPU utilization. The model was testing against 10 questions in file sh_qa_list.txt. Gemma's performance was compared against TinyLlama 1.1B, which is another LLM aimed at resource-constrained systems.
 <br><br>
 ![System Design](/assets/gemma_rag_architecture.png)
-In addition, we looked at how the vector space property changes when varying certain vectorization parameters. Here is an example comparison:
-<br><br>
-![Visualizing Space with Changing Key Parameters](/assets/umap_comparison.png)
 ___
 ## How to Install
 - Create and activate the environment:
@@ -21,7 +18,7 @@ $ source mychat/bin/activate
 ```
 $ pip install -r requirements.txt
 ```
-- Download gemma-2b-it-q4_k_m.gguf from [lmstudio-ai HF repo](https://huggingface.co/lmstudio-ai/gemma-2b-it-GGUF/tree/main) to directory `models`.
+- Download gemma-2b-it-q4_k_m.gguf from [lmstudio-ai HF repo](https://huggingface.co/lmstudio-ai/gemma-2b-it-GGUF/tree/main) to directory `./models/gemma_2b/`.
 - Run script `main.py` to start the testing:
 ```
 $ python main.py
@@ -52,7 +49,7 @@ gemma_2b_en;Q8;0.69925;37.00;2.07;383.21
 gemma_2b_en;Q9;0.52909;37.12;2.11;387.30
 gemma_2b_en;Q10;0.68425;37.40;2.14;390.43
 ```
-The results of the model evaluation as compared to TinyLlama in terms of cosine similarity of the responses is captured in the following Treemap chart:
+The results of the model evaluation as compared to TinyLlama in terms of cosine similarity of the responses captured in the following Treemap chart:
 <br><br>
 ![Cosine Similarity Treemap](/assets/gemma_cosine.png)
 ___
